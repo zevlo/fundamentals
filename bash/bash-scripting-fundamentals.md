@@ -8,15 +8,41 @@
 - Use `bash -x` to debug scripts
 - **Run shellcheck on every script**
 
-Bash has variables, conditionals, loops, and functions. It’s not just a command runner - it’s a scripting language that’s on every Linux server.
+## **Module 2: Variables and Quoting**
 
-**Why bash over zsh/fish?** Bash is the standard. When you SSH into a server, it’s running bash. Write portable scripts that work everywhere.
+**Goal**: Learn how to store and manipulate data in bash scripts safely. Master quoting rules to avoid security vulnerabilities - this is where most bash bugs come from.
 
-**Why write scripts?** Instead of typing commands one by one, write them once and run whenever needed. Automation, repeatability, documentation.
+- **Variables**: Assign with `=` (no spaces), access with `${}`
+- **Double quotes**: Variables expand, spaces preserved - **use by default**
+- **Single quotes**: Everything literal - use for exact strings
+- **No quotes**: Dangerous - causes word splitting and glob expansion
+- **Command substitution**: `$(command)` captures output
+- **Special variables**: `$1` for arguments, `$?` for exit codes, `$@` for all args
+- **Environment variables**: Don’t store secrets in them - use files instead
 
-## **Definitions**
+## **Module 3: Parameter Expansion**
 
-**Shebang**: The `#!` line specifying which interpreter runs the script.
-**Shellcheck**: Static analysis tool for shell scripts - use it on everything.
-**Symbolic link (symlink)**: A file that points to another file. Changes to the target are reflected through the link.
-**Dotfiles**: Configuration files in your home directory (named with a leading dot, like `.bashrc`). Storing them in a `~/dotfiles/` directory with symlinks makes them portable and version-controllable.
+**Goal**: Master parameter expansion - the skill that separates bash professionals from beginners.
+
+- **Parameter expansion** replaces the need for sed, awk, cut in most cases
+- **Default values**: `${var:-default}` and `${var:=default}`
+- **String length**: `${#var}`
+- **Remove suffix**: `${var%pattern}` (shortest), `${var%%pattern}` (longest)
+- **Remove prefix**: `${var#pattern}` (shortest), `${var##pattern}` (longest)
+- **Search/replace**: `${var/old/new}` (first), `${var//old/new}` (all)
+- **Case change**: `${var^^}` (upper), `${var,,}` (lower)
+- **Order matters**: Brace expansion happens before variable expansion
+
+## **Module 4: Conditionals and Logic**
+
+**Goal**: Learn to make decisions in your scripts safely. Master exit codes, logical operators, and why double brackets are mandatory for security.
+
+- **Exit codes**: 0 = success, non-zero = failure, check with `$?`
+- **&& (AND)**: Run next command only if previous succeeded
+- **|| (OR)**: Run next command only if previous failed
+- **[[ ]]**: Always use double brackets for tests (NEVER single brackets)
+- **String tests**: `==`, `!=`, `-z`, `-n`
+- **Numeric tests**: `-eq`, `-ne`, `-gt`, `-lt`, `-ge`, `-le`
+- **File tests**: `-f`, `-d`, `-e`, `-r`, `-w`, `-x`
+- **command -v**: Check if a command exists (NOT `which`)
+- **case statements**: Pattern matching with `case/esac`
