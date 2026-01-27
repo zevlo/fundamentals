@@ -46,21 +46,6 @@ You’re not just typing random commands anymore. You understand what’s happen
 - `type` is better than `which` for understanding commands
 - Use `man` for documentation, `help` for shell builtins, `--help` for quick reference
 
-### **Directories**
-
-| Directory | Purpose |
-|----------|----------|
-| `/home` | User home directories (your files live here) |
-| `/etc` | System configuration files|
-| `/var` | Variable data (logs, databases, mail) |
-| `/tmp` | Temporary files (cleared on reboot) |
-| `/usr` | User programs and data |
-| `/bin` | Essential command binaries |
-| `/sbin` | System administration binaries |
-| `/opt` | Optional/third-party software |
-| `/dev` | Device files |
-| `/proc` | Process and kernel information |
-
 ## **Module 5: Reading and Viewing Files**
 
 **Goal**: View file contents, search for text, and understand file information.
