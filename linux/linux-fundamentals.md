@@ -1,13 +1,23 @@
+# **Overview**
+- Focuses on mastering Kubernetes and cloud-native technologies.
+- Kubernetes is built directly on Linux.
+- Kubernetes orchestrates containerized applications.
+- Containers serve as lightweight abstractions of a Linux OS.
+- Containers share the host kernel to execute isolated programs.
+- CI/CD pipelines run natively in Linux environments.
+- Use Bash,  Vi, and Tmux with default keybinds.
+
 ## **Module 1: Get a Linux Terminal**
 
 **Goal**: A working Linux system and will have typed your first commands.
 
-- **Linux** is an operating system kernel that controls your computer’s hardware and runs programs.
-- You can’t talk to the kernel directly - you need a translator.
-- The **shell** is that translator - a program that accepts your commands and communicates with the operating system.
-- The shell starts when you log in and waits for your input.
-- Commands like `ls` and `cat` are just programs that the shell finds and runs for you.
-- A **terminal** is the window; the **shell** is what runs inside it.
+- Created a Linux virtual machine
+- Installed Ubuntu Server
+- Found your VM’s IP address
+- Connected remotely via SSH
+- Ran your first Linux commands
+
+You have a working Linux environment. You typed commands and got results. That’s the foundation everything else builds on.
 
 ## **Module 2: What is Linux?**
 
@@ -25,7 +35,7 @@ You’re not just typing random commands anymore. You understand what’s happen
 
 ## **Module 3: Package Management**
 
-**Goal**: Install software and keep your system updated.
+**Goal**: Install software and keep your system updated. Linux doesn’t have an app store you click through. You install software from the command line using a package manager.
 
 - **Packages** are bundles of software from trusted repositories
 - **APT** is Ubuntu’s package manager
@@ -36,7 +46,7 @@ You’re not just typing random commands anymore. You understand what’s happen
 
 ## **Module 4: Navigating the File System**
 
-**Goal**: Move around confidently and understand how Linux organizes files.
+**Goal**: Move around confidently and understand how Linux organizes files. Everything in Linux is organized in a hierarchy of directories. Understanding this structure is fundamental to everything else.
 
 - Linux has a single directory tree starting at `/`
 - Key directories: `/home` (your files), `/etc` (config), `/var` (logs)
@@ -48,7 +58,7 @@ You’re not just typing random commands anymore. You understand what’s happen
 
 ## **Module 5: Reading and Viewing Files**
 
-**Goal**: View file contents, search for text, and understand file information.
+**Goal**: View file contents, search for text, and understand file information. You can look inside files without opening an editor. This is essential for reading logs, configuration files, and understanding what’s on a system.
 
 - `cat` for small files, `less` for large files
 - `head` and `tail` for beginning and end
@@ -59,14 +69,7 @@ You’re not just typing random commands anymore. You understand what’s happen
 
 ## **Module 6: Text Editing with Vi**
 
-**Goal**: Edit files from the command line using the editor that’s available everywhere.
-
-- Vi is everywhere - learn the basics, use them forever
-- Two modes: Normal (commands) and Insert (typing)
-- `i` to type, `Esc` to stop typing
-- `:wq` to save and quit, `:q!` to abandon changes
-- `hjkl` for navigation, `dd` to delete lines, `u` to undo
-- BusyBox vi is what you’ll find in containers - no extras
+**Goal**: Edit files from the command line using the editor that’s available everywhere. Vi is the universal text editor. Every Linux system has it. Learn it once, use it forever.
 
 With just these six commands, you can edit any file anywhere.
 
@@ -77,9 +80,16 @@ With just these six commands, you can edit any file anywhere.
 5. `dd` - Delete a line
 6. `u` - Undo
 
+- Vi is everywhere - learn the basics, use them forever
+- Two modes: Normal (commands) and Insert (typing)
+- `i` to type, `Esc` to stop typing
+- `:wq` to save and quit, `:q!` to abandon changes
+- `hjkl` for navigation, `dd` to delete lines, `u` to undo
+- BusyBox vi is what you’ll find in containers - no extras
+
 ## **Module 7: Users, Groups, and Permissions**
 
-**Goal**: Understand who can access what on a Linux system.
+**Goal**: Understand who can access what on a Linux system. Every file has an owner and permissions. Understanding this is essential for security and troubleshooting “permission denied” errors.
 
 - Every file has an owner (user), group, and permissions
 - `adduser` creates users, `deluser` removes them
@@ -91,7 +101,7 @@ With just these six commands, you can edit any file anywhere.
 
 ## **Module 8: Input/Output and Pipes**
 
-**Goal**: Connect commands together and control where output goes.
+**Goal**: Connect commands together and control where output goes. Linux commands are designed to work together. Output from one command becomes input to another. This is the Unix philosophy in action.
 
 - Programs have stdin (input), stdout (output), stderr (errors)
 - `>` redirects stdout to file, `>>` appends
@@ -103,7 +113,7 @@ With just these six commands, you can edit any file anywhere.
 
 ## **Module 9: Processes and System**
 
-**Goal**: Understand what’s running, manage processes, and control services.
+**Goal**: Understand what’s running, manage processes, and control services. Every running program is a process. Understanding processes is essential for troubleshooting and system administration.
 
 - Every running program is a process with a PID
 - `ps aux` shows all processes, `htop` is interactive
@@ -115,7 +125,7 @@ With just these six commands, you can edit any file anywhere.
 
 ## **Module 10: Networking and SSH**
 
-**Goal**: Understand networking basics and master secure remote access with SSH.
+**Goal**: Understand networking basics and master secure remote access with SSH. Networking is how machines communicate. SSH is how you securely access remote systems. These skills are essential for any Linux administrator.
 
 - `ip addr` shows network interfaces, `ip route` shows routing
 - `/etc/hosts` maps hostnames to IPs locally
@@ -130,7 +140,7 @@ With just these six commands, you can edit any file anywhere.
 
 ## **Module 11: Tmux**
 
-**Goal**: Keep your terminal sessions alive and organize your workspace with multiple panes and windows.
+**Goal**: Keep your terminal sessions alive and organize your workspace with multiple panes and windows. Tmux is a terminal multiplexer. It lets you run multiple terminal sessions inside one window, and keeps them running even when you disconnect.
 
 - Tmux keeps sessions alive when you disconnect
 - Start with `tmux`, detach with `Ctrl+b d`, reattach with `tmux attach`
@@ -141,7 +151,7 @@ With just these six commands, you can edit any file anywhere.
 
 ## **Module 12: Your Terminal Setup**
 
-**Goal**: Transform your terminal from functional to professional with custom configuration files.
+**Goal**: Transform your terminal from functional to professional with custom configuration files. Your terminal is your workspace. A good setup makes you more productive and comfortable. Let’s configure a professional environment.
 
 - Dotfiles (files starting with `.`) configure your environment
 - `.bashrc` runs for interactive shells, `.profile` for login shells
