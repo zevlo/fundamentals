@@ -11,10 +11,12 @@
 
 ```
 git switch -c feature-name      # Create branch
+
 # ... make changes ...
 git add .                       # Stage changes
 git commit -m "Description"     # Commit
 git push                        # Push to GitHub
+
 # Create PR on GitHub, merge, then:
 git switch master
 git pull
@@ -26,9 +28,8 @@ git pull
 git reset --hard origin/master    # Nuclear option
 ```
 
-## Notes
+**Git has three states for your files:**
 
-Git has three states for your files:
 1. **Working directory** - Files as you edit them
 2. **Staging area** - Changes you’re preparing to commit
 3. **Committed** - Saved in Git history
@@ -36,6 +37,16 @@ Git has three states for your files:
 ```
 Edit files → git add → git commit → git push
 ```
+
+### **Create a new SSH key and add it to GitHub**
+
+1. Go to [github.com](https://github.com/ "https://github.com/") → Sign in
+2. Click your profile picture (top right) → **Settings**
+3. Click **SSH and GPG keys** (left sidebar)
+4. Click **New SSH key**
+5. Title: “My Linux VM” (or whatever helps you remember)
+6. Paste your public key
+7. Click **Add SSH key**
 
 ### **Commit Message Tips**
 
@@ -86,3 +97,15 @@ In a team, someone would review your code first. For now:
 1. Click **Merge pull request**
 2. Click **Confirm merge**
 3. Click **Delete branch** (keeps things clean)
+
+### **Definitions**
+
+- **Repository (repo):** A project folder tracked by Git.
+- **Commit:** A saved snapshot of your files at a point in time.
+- **Branch:** A parallel version of your repository.
+- **Master:** The primary branch representing stable code.
+- **Remote:** A repository on a server (like GitHub).
+- **Origin:** The default name for your GitHub remote.
+- **Pull Request (PR):** A request to merge one branch into another.
+- **Clone:** Download a complete copy of a repository.
+- **HEAD:** Pointer to your current location in Git history.
